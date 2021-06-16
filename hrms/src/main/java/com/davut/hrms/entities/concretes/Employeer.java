@@ -1,5 +1,7 @@
 package com.davut.hrms.entities.concretes;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,23 +17,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name="users")
-public class User {
+@Table(name="employeers")
+public class Employeer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="user_id")
+	private int userId;
 	
-	private int id;
+	@Column(name="company_name")
+	private String firstName;
 	
-	@Column(name="user_no")
-	private String userNo;
+	@Column(name="company_web_site")
+	private String companyWebSite;
 	
-	@Column(name="password")
-	private String password;
+	@Column(name="company_email")
+	private String companyEmail;
 	
-	@Column(name="re_password")
-	private String rePassword;
-	
+	@Column(name="phone_number")
+	private String phoneNumber;
 
-      
+
 }

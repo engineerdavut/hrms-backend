@@ -8,21 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.davut.hrms.business.abstracts.JobPositionService;
+import com.davut.hrms.core.DataResult;
 import com.davut.hrms.entities.concretes.JobPosition;
 
 @RestController
 @RequestMapping("/api/jobposition")
-public class JobPositionController {
+public class JobPositionsController {
 	private JobPositionService jobPositionService;
 	@Autowired
 
-	public JobPositionController(JobPositionService jobPositionService) {
+	public JobPositionsController(JobPositionService jobPositionService) {
 		super();
 		this.jobPositionService = jobPositionService;
 	}
-	@GetMapping
-	public List<JobPosition> getAll(){
-		return this.jobPositionService.getAll();
+	@GetMapping("/getall")
+	public DataResult<List<JobPosition>> getAll(){
+		return  this.jobPositionService.getAll();
 	}
 
 }

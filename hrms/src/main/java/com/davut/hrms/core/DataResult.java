@@ -1,14 +1,14 @@
-package kodlamaio.northwind.core.utilities;
+package com.davut.hrms.core;
 
 public class DataResult<T> extends Result{
-	private T data;
+	T data;
 
-	public DataResult(T data,boolean success, String message) {
+	public DataResult(T data, boolean success, String message) {
 		super(success, message);
 		// TODO Auto-generated constructor stub
 		this.data=data;
 	}
-	public DataResult(T data,boolean success) {
+	public DataResult(T data, boolean success) {
 		super(success);
 		// TODO Auto-generated constructor stub
 		this.data=data;

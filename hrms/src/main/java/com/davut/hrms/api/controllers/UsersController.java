@@ -8,20 +8,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.davut.hrms.business.abstracts.UserService;
+import com.davut.hrms.core.DataResult;
 import com.davut.hrms.entities.concretes.User;
 
 @RestController
 @RequestMapping("/api/users")
-public class UserController {
+public class UsersController {
 	private UserService userService;
 	@Autowired
 
-	public UserController(UserService userService) {
+	public UsersController(UserService userService) {
 		super();
 		this.userService = userService;
 	}
-	@GetMapping
-	public List<User> getAll(){
+	@GetMapping("/getall")
+	public DataResult<List<User>> getAll(){
 		return this.userService.getAll();
 	}
 	
